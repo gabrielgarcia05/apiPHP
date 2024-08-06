@@ -1,0 +1,59 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "exercicio",
+    "collectionId": "0d934db4-52e3-43ee-831c-91f85308d39d",
+    "dateExported": "2024-07-30T14:00:33.398Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "7f60528d-82aa-4277-a3af-852d28839b34",
+            "colId": "0d934db4-52e3-43ee-831c-91f85308d39d",
+            "containerId": "",
+            "name": "Teste requisição GET",
+            "url": "localhost/exercicio/api.php/alunos/8",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-07-30T12:17:09.268Z",
+            "modified": "2024-07-30T13:49:15.138Z",
+            "headers": []
+        },
+        {
+            "_id": "05b6ca4c-d6f1-431b-b7fb-6715c1d12fbd",
+            "colId": "0d934db4-52e3-43ee-831c-91f85308d39d",
+            "containerId": "",
+            "name": "Teste requisição POST",
+            "url": "localhost/exercicio/api.php/alunos/23",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-07-30T12:19:34.436Z",
+            "modified": "2024-07-30T12:52:43.338Z",
+            "headers": []
+        },
+        {
+            "_id": "6d246105-1f25-4370-94ef-871c10086a48",
+            "colId": "0d934db4-52e3-43ee-831c-91f85308d39d",
+            "containerId": "",
+            "name": "Teste requisição PUT",
+            "url": "localhost/exercicio/api.php",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-07-30T12:20:02.136Z",
+            "modified": "2024-07-30T12:20:07.220Z",
+            "headers": []
+        },
+        {
+            "_id": "f28f9770-6b0d-4dd1-a9df-0f7783395924",
+            "colId": "0d934db4-52e3-43ee-831c-91f85308d39d",
+            "containerId": "",
+            "name": "Teste requisição DELETE",
+            "url": "localhost/exercicio/api.php",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-07-30T12:20:18.929Z",
+            "modified": "2024-07-30T12:20:24.503Z",
+            "headers": []
+        }
+    ],
+    "ref": "qzZkI7yHHg9ZSIPC5rB1KPLrhwv766tpPxt5jkck_CW4XDqq5iGSJ1tZ6MVteHUF8ZtBMxpkRLfjvIoR7O2eDA"
+}

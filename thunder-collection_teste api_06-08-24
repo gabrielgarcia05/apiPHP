@@ -1,0 +1,59 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "teste api",
+    "collectionId": "bcbb2e78-0fee-4052-a4ff-5c1203ef72d0",
+    "dateExported": "2024-08-06T12:29:40.198Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "06faa891-d422-4e8c-a241-0da4d93014c8",
+            "colId": "bcbb2e78-0fee-4052-a4ff-5c1203ef72d0",
+            "containerId": "",
+            "name": "Teste GET",
+            "url": "localhost/exercicio/api.php/cursos/3",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-08-06T10:53:49.297Z",
+            "modified": "2024-08-06T12:23:28.085Z",
+            "headers": []
+        },
+        {
+            "_id": "9c562dab-1b38-4325-b401-f4717d66ae52",
+            "colId": "bcbb2e78-0fee-4052-a4ff-5c1203ef72d0",
+            "containerId": "",
+            "name": "Teste POST",
+            "url": "localhost/exercicio/api.php/cursos",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-08-06T10:54:51.249Z",
+            "modified": "2024-08-06T11:16:02.786Z",
+            "headers": []
+        },
+        {
+            "_id": "b74bd755-b9a9-40d1-b1bc-eeca92f7f0cf",
+            "colId": "bcbb2e78-0fee-4052-a4ff-5c1203ef72d0",
+            "containerId": "",
+            "name": "Teste PUT",
+            "url": "localhost/exercicio/api.php/alunos",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-08-06T10:54:53.120Z",
+            "modified": "2024-08-06T10:55:23.792Z",
+            "headers": []
+        },
+        {
+            "_id": "6ff36d8c-3852-4822-bb66-9ab8e51c521a",
+            "colId": "bcbb2e78-0fee-4052-a4ff-5c1203ef72d0",
+            "containerId": "",
+            "name": "Teste DELETE",
+            "url": "localhost/exercicio/api.php/alunos",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-08-06T10:54:54.704Z",
+            "modified": "2024-08-06T10:55:39.975Z",
+            "headers": []
+        }
+    ],
+    "ref": "1k82K1ZHhVeMoU4LMro2fQHDvBNly1oemAUynBQc14e2c6tyeM0WphPBXjtEnZT9vyvDHfEA25tyDWB3INChtg"
+}

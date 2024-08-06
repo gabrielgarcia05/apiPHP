@@ -4,13 +4,10 @@
 
     $metodo = $_SERVER['REQUEST_METHOD'];
 
-    // echo json_encode($metodo);
-
     $url = $_SERVER['REQUEST_URI'];
-    echo json_encode($url);
-
+    
     $path = parse_url($url, PHP_URL_PATH);
-    $path = trim($path,'/');
+    $path = trim($path,'/');    
 
     $path_parts = explode('/',$path);
     
@@ -28,51 +25,99 @@
         'quartaparte' => $quartaparte,
     ];
 
-    //
+    //echo json_encode($resposta);
 
-
-    switch ($metodo){
+    switch($metodo){
         case 'GET':
-            # lógica para o get ...
-
-            if($terceiraparte == 'alunos' && $quartaparte == ''){
-                echo json_encode([
-                    'mensagem' => 'LISTA DE TODOS OS ALUNOS'
-                ]);
+            //LOGICA PARA GET
+            if ($terceiraparte == 'alunos' && $quartaparte == ''){
+                lista_alunos();
             }
-            elseif($terceiraparte == 'alunos' && $quartaparte != ''){
-                echo json_encode ([
-                    'mensagem' => 'LISTA DE TODOS OS CURSOS',
-                    'id_aluno' => $quartaparte
-                ]);
+            elseif ($terceiraparte == 'alunos' && $quartaparte != ''){
+                lista_um_aluno($quartaparte);
             }
-            elseif($terceiraparte == 'cursos' && $quartaparte == ''){
-                echo json_encode ([
-                    'mensagem' => 'LISTA DE TODOS OS CURSOS'
-                ]);
+            elseif ($terceiraparte == 'cursos' && $quartaparte == '') {
+                lista_cursos();                
             }
-            elseif($terceiraparte == 'cursos' && $quartaparte != ''){
-                echo json_encode ([
-                    'mensagem' => 'LISTA DE TODOS OS CURSOS',
-                    'id_aluno' => $quartaparte
-                ]);
+            elseif ($terceiraparte == 'cursos' && $quartaparte != ''){
+                lista_um_curso($quartaparte);
             }
             break;
         case 'POST':
-            # lógica para o get ...
+            //LOGICA PARA POST
+            if ($terceiraparte == 'alunos'){
+                echo json_encode([
+                    'mensagem' => 'INSERE UM ALUNO NOVO'
+                ]); 
+            }
+            elseif ($terceiraparte == 'cursos') {
+                echo json_encode([
+                    'mensagem' => 'INSERE UM CURSO NOVO'
+                ]);
+            }
             break;
         case 'PUT':
-            # lógica para o get ...
+            //LOGICA PARA PUT
             break;
         case 'DELETE':
-            # lógica para o get ...
+            //LOGICA PARA DELETE
             break;
-        
         default:
             echo json_encode([
-                'mensagem' => 'Método não permitido'
+                'mensagem'=>'Método não permitido!'
             ]);
             break;
     }
+
+    
+
+    function lista_alunos(){
+        global $conexao;
+        $resultado = $conexao->query("SELECT * FROM alunos");
+        $alunos = $resultado->fetch_all(MYSQLI_ASSOC);
+        echo json_encode([
+            'mensagem' => 'LISTA DE TODOS OS ALUNOS',
+            'dados' => $alunos
+        ]);
+    }
+
+    function lista_um_aluno($quartaparte){
+        global $conexao;
+        $stmt = $conexao->prepare("SELECT * FROM alunos WHERE id = ?");
+        $stmt->bind_param('i',$quartaparte);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $aluno = $resultado->fetch_assoc();
+
+        echo json_encode([
+            'mensagem' => 'LISTA DE UM ALUNO',
+            'dados_aluno' => $aluno
+        ]);
+    }
+
+    function lista_cursos(){
+        global $conexao;
+        $resultado = $conexao->query("SELECT * FROM cursos");
+        $cursos = $resultado->fetch_all(MYSQLI_ASSOC);
+        echo json_encode([
+            'mensagem' => 'LISTA DE TODOS OS CURSOS',
+            'dados' => $cursos
+        ]);
+    }
+
+    function lista_um_curso($quartaparte){
+        global $conexao;
+        $stmt = $conexao->prepare("SELECT * FROM cursos WHERE id_curso = ?");
+        $stmt->bind_param('i',$quartaparte);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $curso = $resultado->fetch_assoc();
+
+        echo json_encode([
+            'mensagem' => 'LISTA DE UM CURSO',
+            'dados_aluno' => $curso
+        ]);
+    }
+
 
 ?>
